@@ -34,7 +34,7 @@ Boş veritabanına örnek kategorileri, ürünleri ve görselleri yüklemek içi
 python manage.py replace_demo_catalog --replace
 ```
 
-API alan adında `/healthz`, `/api/categories/` ve `/api/products/` yollarını aç. Django’nun üretim ayarlarını `python manage.py check --deploy --fail-level ERROR` ile denetle. Frontend servisi için `DJANGO_ORIGIN` değerine API’nin HTTPS kök adresini gir.
+Backend alan adında `/healthz`, `/api/categories/` ve `/api/products/` yollarını aç. Aynı alan adındaki `/admin/` yolundan Django yönetim paneline süper kullanıcı hesabıyla giriş yap. Django’nun üretim ayarlarını `python manage.py check --deploy --fail-level ERROR` ile denetle. Frontend servisi için `DJANGO_ORIGIN` değerine backend’in HTTPS kök adresini gir.
 
 ## Güncelleme ve yedekler
 

@@ -15,7 +15,8 @@
 		file_server
 	}
 
-	handle /api/* {
+	@django path /api/* /admin /admin/*
+	handle @django {
 		reverse_proxy backend:8000 {
 			header_up X-Forwarded-Proto https
 		}
