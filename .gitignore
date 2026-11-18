@@ -1,0 +1,9 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+!.env.*.example
+.venv/
+*.sqlite3-*
+.deploy/
+/frontend/design-qa.md

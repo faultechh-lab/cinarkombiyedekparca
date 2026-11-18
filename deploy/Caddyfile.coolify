@@ -1,0 +1,27 @@
+:8080 {
+	header X-Content-Type-Options nosniff
+
+	handle /healthz {
+		respond "ok"
+	}
+
+	handle_path /media/* {
+		root * /srv/media
+		file_server
+	}
+
+	handle_path /static/* {
+		root * /srv/static
+		file_server
+	}
+
+	handle /api/* {
+		reverse_proxy backend:8000 {
+			header_up X-Forwarded-Proto https
+		}
+	}
+
+	handle {
+		respond 404
+	}
+}

@@ -1,0 +1,140 @@
+{
+  "categories": [
+    {
+      "slug": "kombi-kartlari",
+      "name": "Kombi Kartları",
+      "description": "Kombinin elektronik kontrolünü sağlayan anakart ve devre kartı seçenekleri. Kart uyumluluğu için cihaz modelini ve mevcut kart üzerindeki kodu paylaşabilirsiniz.",
+      "image": "kombi-kartlari.jpg"
+    },
+    {
+      "slug": "sirkulasyon-pompalari",
+      "name": "Sirkülasyon Pompaları",
+      "description": "Kombi tesisatında suyun dolaşmasını sağlayan pompa seçenekleri. Uygun pompayı belirlemek için cihaz modelini ve pompa etiketindeki kodu paylaşabilirsiniz.",
+      "image": "sirkulasyon-pompalari.jpg"
+    },
+    {
+      "slug": "fan-motorlari",
+      "name": "Fan Motorları",
+      "description": "Kombilerde hava akışını sağlayan fan grupları. Fan uyumluluğunu kontrol etmek için kombi modeli ve fan üzerindeki parça kodu gerekir.",
+      "image": "fan-motorlari.jpg"
+    },
+    {
+      "slug": "uc-yollu-vanalar",
+      "name": "Üç Yollu Vanalar",
+      "description": "Kombide kalorifer ve sıcak su devreleri arasında geçişi sağlayan üç yollu vana grupları. Vana gövdesi ve motor uyumluluğu cihaz modeline göre değişebilir.",
+      "image": "uc-yollu-vanalar.jpg"
+    },
+    {
+      "slug": "ntc-sensorleri",
+      "name": "NTC Sensörleri",
+      "description": "Kombinin su sıcaklığını algılayan NTC sensörleri. Daldırma tipi sensör seçiminde cihaz modeli ve bağlantı biçimi önemlidir.",
+      "image": "ntc-sensorleri.jpg"
+    }
+  ],
+  "products": [
+    {
+      "slug": "bosch-condens-2000-kombi-karti",
+      "name": "Bosch Condens 2000 kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "3522",
+      "image": "kombi-kartlari.jpg",
+      "description": "Bosch Condens 2000 kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "arcelik-dgk-20h-kombi-karti",
+      "name": "Arçelik DGK 20H kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "3580",
+      "image": "kombi-kartlari.jpg",
+      "description": "Arçelik DGK 20H kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "arcelik-dgk-20-bi-kombi-karti",
+      "name": "Arçelik DGK 20 Bİ kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "ORNEK-003",
+      "image": "kombi-kartlari.jpg",
+      "description": "Arçelik DGK 20 Bİ kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "arcelik-dgk-20-hermatik-kombi-karti",
+      "name": "Arçelik DGK 20 Hermatik kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "3582",
+      "image": "kombi-kartlari.jpg",
+      "description": "Arçelik DGK 20 Hermatik kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "arcelik-dgk-20-h-lcd-kombi-karti",
+      "name": "Arçelik DGK 20 H LCD kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "3583",
+      "image": "kombi-kartlari.jpg",
+      "description": "Arçelik DGK 20 H LCD kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "arcelik-dgk-y-28-kombi-karti",
+      "name": "Arçelik DGK Y 28 kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "3584",
+      "image": "kombi-kartlari.jpg",
+      "description": "Arçelik DGK Y 28 kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "baykan-ay-kombi-karti",
+      "name": "Baykan Ay kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "ORNEK-007",
+      "image": "kombi-kartlari.jpg",
+      "description": "Baykan Ay kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "baykan-mars-kombi-karti",
+      "name": "Baykan Mars kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "ORNEK-008",
+      "image": "kombi-kartlari.jpg",
+      "description": "Baykan Mars kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "baykan-yeni-yildiz-kombi-karti",
+      "name": "Baykan Yeni Yıldız kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "ORNEK-009",
+      "image": "kombi-kartlari.jpg",
+      "description": "Baykan Yeni Yıldız kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "baykan-yildiz-kombi-karti",
+      "name": "Baykan Yıldız kombi kartı",
+      "category": "kombi-kartlari",
+      "sku": "ORNEK-010",
+      "image": "kombi-kartlari.jpg",
+      "description": "Baykan Yıldız kombi kartı için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "bosch-buderus-gb-ntc",
+      "name": "Bosch / Buderus GB daldırma tipi NTC",
+      "category": "ntc-sensorleri",
+      "sku": "ORNEK-011",
+      "image": "ntc-sensorleri.jpg",
+      "description": "Bosch / Buderus GB daldırma tipi NTC için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "vaillant-vuw-uc-yollu-vana",
+      "name": "Vaillant VUW üç yollu vana gövdesi",
+      "category": "uc-yollu-vanalar",
+      "sku": "ORNEK-012",
+      "image": "uc-yollu-vanalar.jpg",
+      "description": "Vaillant VUW üç yollu vana gövdesi için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    },
+    {
+      "slug": "vaillant-turbotec-uc-yollu-vana",
+      "name": "Vaillant turboTEC üç yollu vana grubu",
+      "category": "uc-yollu-vanalar",
+      "sku": "ORNEK-013",
+      "image": "uc-yollu-vanalar.jpg",
+      "description": "Vaillant turboTEC üç yollu vana grubu için cihaz modeliniz ve parça kodunuzla uyumluluk bilgisi isteyebilirsiniz. Görsel temsilidir."
+    }
+  ]
+}
