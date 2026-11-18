@@ -26,8 +26,11 @@ class CategorySerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    category_name = serializers.CharField(source='category.name', read_only=True)
-    category_slug = serializers.CharField(source='category.slug', read_only=True)
+    category_name = serializers.CharField(source='category.name', read_only=True, allow_null=True)
+    category_slug = serializers.CharField(source='category.slug', read_only=True, allow_null=True)
+
+    def validate_sku(self, value):
+        return value or None
 
     class Meta:
         model = Product
@@ -54,7 +57,8 @@ class ProductDetailSerializer(ProductSerializer):
         queryset=Category.objects.all(),
         source='category',
         write_only=True,
-        required=False
+        required=False,
+        allow_null=True,
     )
 
     class Meta(ProductSerializer.Meta):

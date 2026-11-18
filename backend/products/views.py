@@ -74,9 +74,11 @@ class ProductViewSet(viewsets.ModelViewSet):
         if slug:
             queryset = queryset.filter(slug=slug)
 
-        # ?category=1 (Kategoriye göre filtreleme)
+        # ?category=1 veya ?category=uncategorized
         category_id = self.request.query_params.get('category')
-        if category_id:
+        if category_id == 'uncategorized':
+            queryset = queryset.filter(category_id__isnull=True)
+        elif category_id:
             try:
                 category_id = serializers.IntegerField(min_value=1, max_value=2**63 - 1).run_validation(category_id)
             except ValidationError as error:

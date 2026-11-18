@@ -177,6 +177,33 @@ class ProductAPICRUDTest(APITestCase):
         self.assertEqual(res.status_code, status.HTTP_204_NO_CONTENT)
         self.assertEqual(Product.objects.filter(id=new_prod_id).count(), 0)
 
+    def test_product_code_and_category_can_be_left_blank_or_cleared(self):
+        created_ids = []
+        for payload, format in (
+            ({'name': 'Kod ve kategori olmadan'}, 'json'),
+            ({'name': 'Boş form alanları', 'sku': '', 'category': ''}, 'multipart'),
+        ):
+            with self.subTest(format=format):
+                response = self.client.post('/api/products/', payload, format=format)
+                self.assertEqual(response.status_code, status.HTTP_201_CREATED, response.data)
+                self.assertIsNone(response.data['sku'])
+                self.assertIsNone(response.data['category'])
+                created_ids.append(response.data['id'])
+
+        response = self.client.patch(
+            f'/api/products/{self.prod1.pk}/', {'sku': None, 'category': None}, format='json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK, response.data)
+        response = self.client.get('/api/products/', {'category': 'uncategorized'})
+        self.assertEqual({product['id'] for product in response.data}, {*created_ids, self.prod1.pk})
+        response = self.client.get(f'/api/products/{self.prod1.pk}/')
+        for field in ('sku', 'category', 'category_name', 'category_slug'):
+            self.assertIsNone(response.data[field])
+
+        duplicate = self.client.post('/api/products/', {'name': 'Tekrarlanan kod', 'sku': self.prod2.sku})
+        self.assertEqual(duplicate.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertIn('sku', duplicate.data)
+
     def test_public_reads_and_superuser_only_writes(self):
         paths = [
             ('/api/categories/', f'/api/categories/{self.cat1.pk}/'),

@@ -47,9 +47,11 @@ class Category(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=200, verbose_name="Ürün Adı")
     slug = models.SlugField(max_length=220, unique=True, editable=False)
-    sku = models.CharField(max_length=100, unique=True, verbose_name="Stok Kodu (SKU)")
+    sku = models.CharField(max_length=100, unique=True, null=True, blank=True, verbose_name="Parça Kodu (SKU)")
     description = models.TextField(null=True, blank=True, verbose_name="Açıklama")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='products', verbose_name="Kategori")
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name='products', null=True, blank=True, verbose_name="Kategori"
+    )
     in_stock = models.BooleanField(default=False, verbose_name="Stokta Var mı?")
     image = models.ImageField(upload_to='products/images/', null=True, blank=True, verbose_name="Ürün Görseli")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Oluşturulma Tarihi")
