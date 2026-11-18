@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-from django.conf import settings
 from django.core.files import File
 from django.core.management.base import BaseCommand, CommandError
 from django.db import transaction
@@ -20,7 +19,7 @@ class Command(BaseCommand):
             raise CommandError("Mevcut kataloğu değiştirmek için --replace kullanın.")
 
         fixture = Path(__file__).resolve().parents[2] / "fixtures" / "demo_catalog.json"
-        asset_dir = settings.BASE_DIR.parent / "frontend" / "public" / "assets"
+        asset_dir = fixture.parent / "images"
         catalog = json.loads(fixture.read_text(encoding="utf-8"))
         entries = catalog["categories"] + catalog["products"]
         images = {entry["image"]: asset_dir / entry["image"] for entry in entries}

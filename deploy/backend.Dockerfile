@@ -10,7 +10,6 @@ RUN pip install --no-cache-dir -r requirements-production.txt \
     && useradd --system --uid 10001 --gid app app
 
 COPY backend/ ./
-COPY frontend/public/assets/ /app/frontend/public/assets/
 RUN mkdir -p media staticfiles && chown app:app media staticfiles
 
 USER app

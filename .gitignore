@@ -6,4 +6,4 @@
 .venv/
 *.sqlite3-*
 .deploy/
-/frontend/design-qa.md
+/frontend/
