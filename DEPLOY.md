@@ -20,6 +20,14 @@ python manage.py replace_demo_catalog --replace
 
 API adresinde `/healthz`, `/api/categories/` ve `/api/products/` yollarını açarak dağıtımı doğrula. Frontend bağlantısı için HTTPS API kök adresi yeterlidir.
 
+### Coolify’da ayrı PostgreSQL kaynağı
+
+Production ortamında **New Resource → PostgreSQL** ile veritabanı oluştur. Django uygulamasıyla aynı Hetzner sunucusunu ve aynı Coolify destination ağını seç. PostgreSQL’i başlat ve General bölümündeki **Postgres URL (internal)** değerini kullan. Veritabanı erişimi Private olarak kalabilir. [Coolify PostgreSQL belgeleri](https://coolify.io/docs/databases/postgresql)
+
+Backend uygulamasının **Docker Compose Location** alanına `/compose.coolify.external-db.yaml` yaz. **Advanced → Docker compose → Predefined network** bölümünde **Connect To Predefined Network** seçeneğini aç. API alan adı ve `8080` portu için yukarıdaki ayarları kullan. [Coolify ağ belgeleri](https://coolify.io/docs/core/networking-in-coolify#how-private-container-traffic-works)
+
+PostgreSQL bağlantısı için Coolify’ın gösterdiği sunucu adını `DB_HOST`, portu `DB_PORT` (varsayılan `5432`), database adını `DB_NAME`, kullanıcı adını `DB_USER` ve veritabanı parolasını `DB_PASSWORD` olarak gir. `SITE_DOMAIN`, `DJANGO_SECRET_KEY` ve `CSRF_EXTRA_ORIGINS` ayarları yukarıdaki gibidir. Django ilk başlangıçta migrasyonları bu veritabanına uygular.
+
 ## Tek sunucuda frontend ve backend
 
 Bu kurulum tek bir Linux VPS üzerinde Docker Compose kullanır. Caddy dışarıya HTTPS sunar. Node, Django API’sinden aldığı verilerle katalog sayfalarını ve site haritasını sunar. PostgreSQL verileri ile yüklenen görseller ayrı kalıcı birimlerde tutulur.
