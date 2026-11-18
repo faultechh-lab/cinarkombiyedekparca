@@ -1,7 +1,17 @@
 import os
 
+from django.core.exceptions import ImproperlyConfigured
+
 from .settings import *
 
+
+required_env = {"SECRET_KEY": "DJANGO_SECRET_KEY", "SITE_DOMAIN": "SITE_DOMAIN"}
+if DB_ENGINE in ("postgres", "postgresql"):
+    required_env.update({name: name for name in ("DB_HOST", "DB_NAME", "DB_USER", "DB_PASSWORD")})
+
+missing_env = [label for name, label in required_env.items() if not os.environ.get(name, "").strip()]
+if missing_env:
+    raise ImproperlyConfigured(f"Set the production runtime variables: {', '.join(missing_env)}")
 
 DEBUG = False
 SECRET_KEY = os.environ["SECRET_KEY"]

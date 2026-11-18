@@ -16,6 +16,8 @@
 | `DB_PASSWORD` | PostgreSQL parolası |
 | `CSRF_EXTRA_ORIGINS` | Frontend’in HTTPS kök adresi. Birden fazla adresi virgülle ayır. |
 
+Bu değişkenler Django çalışırken kullanılır. Coolify’da **Runtime** seçeneğini açık, **Build Variable** seçeneğini kapalı tut.
+
 Django ile birlikte bir PostgreSQL container’ı başlatmak istersen `/compose.coolify.yaml` dosyasını seç ve `DB_PASSWORD` değerini belirle. Bu dosya PostgreSQL’i `db_data` biriminde saklar.
 
 ## İlk çalıştırma ve doğrulama

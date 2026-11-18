@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-cinar_catalog}
       POSTGRES_USER: ${DB_USER:-cinar}
-      POSTGRES_PASSWORD: ${DB_PASSWORD:?}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-}
     volumes:
       - db_data:/var/lib/postgresql
     healthcheck:
@@ -20,13 +20,13 @@ services:
       dockerfile: deploy/backend.Dockerfile
     restart: unless-stopped
     environment:
-      SITE_DOMAIN: ${SITE_DOMAIN:?}
-      SECRET_KEY: ${DJANGO_SECRET_KEY:?}
+      SITE_DOMAIN: ${SITE_DOMAIN:-}
+      SECRET_KEY: ${DJANGO_SECRET_KEY:-}
       DEBUG: "False"
       DB_ENGINE: postgres
       DB_NAME: ${DB_NAME:-cinar_catalog}
       DB_USER: ${DB_USER:-cinar}
-      DB_PASSWORD: ${DB_PASSWORD:?}
+      DB_PASSWORD: ${DB_PASSWORD:-}
       DB_HOST: db
       CSRF_EXTRA_ORIGINS: ${CSRF_EXTRA_ORIGINS:-}
     volumes:
